@@ -1,0 +1,96 @@
+@import "_normalize";
+@import "_mixins";
+@import "_framework";
+@import "_variables";
+
+@import "_buttons";
+@import "_forms";
+@import "_promo";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #100c1d;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3 {
+	color: $w;
+}
+
+blockquote {
+	color: $w;
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: 300;
+	text-align: center;
+
+	@media #{$medium-up} {
+		font-size: 60px;
+		line-height:70px;
+		letter-spacing:-2px;
+	}
+}
+
+p {
+	
+	color: $w;
+	font-size: 18px;
+
+	@media #{$medium-up} {
+		
+	}
+}
+
+p a {
+	color: $main-red;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+ .container {
+
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@media #{$medium-up} {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.row {
+		min-width: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.intro {
+	text-align: center;
+}
+
+.error {
+	text-align: center;
+}
+
+footer a {
+	margin: 0 0 10px 0;
+	width: 100%;
+	float: left;
+
+	@media #{$medium-up} {
+		width:auto;
+	}
+}

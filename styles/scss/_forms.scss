@@ -1,0 +1,67 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+/* */
+
+#summoner-name,
+#summoner-server {
+	margin: 0;
+}
+
+#summoner-name {
+	margin: 0 0 30px 0;
+	padding:0 20px;
+	height: 66px;
+	border: 2px solid $w;
+	background: #fff;
+	@include border-radius(4px);
+	font-size: 22px;
+	color: #666;
+	width: 100%;
+	text-align: center;
+
+	@media #{$medium-up} {
+		width: 350px;
+	}
+
+	&:focus {
+		border: 2px solid $main-red;
+	}
+}
+
+#summoner-server {
+	margin: 0 0 30px 0;
+	width:100%;
+}
+
+.selector {
+	margin: 0 0 30px 0;
+	padding: 0;
+	color: $w;
+	display: inline-block;
+	width:100%;
+
+	@media #{$medium-up} {
+
+	}
+
+	label {
+		margin: 0;
+		padding: 0;
+		width: 50%;
+		float:left;
+		display: inline-block;
+		font-family: Montserrat;
+
+	}
+}
