@@ -1,5 +1,16 @@
 /* Buttons */
 
+button {
+	text-align: center;
+	background:none;
+	border: none;
+	cursor: pointer;
+	font-family: Montserrat;
+	font-weight: 700;
+	display: inline-block;
+	text-decoration: none;
+}
+
 .btn {
 	text-align: center;
 	background:none;
@@ -56,7 +67,7 @@
 
 /* BUTTON - Solid */
 
-.btn-solid-red {
+.btn-submit {
 	background: #fb505c; /* Old browsers */
 	background: -moz-linear-gradient(left,  #fc6b56 0%, #fb3b60 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left,  #fc6b56 0%,#fb3b60 100%); /* Chrome10-25,Safari5.1-6 */

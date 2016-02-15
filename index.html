@@ -1,30 +1,20 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lte-ie9 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lte-ie9 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lte-ie9 lt-ie9"> <![endif]-->
-<!--[if IE 9]>         <html class="no-js lte-ie9 ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->
-
-<html class="no-js">
-<!--<![endif]-->
+<html lang="en" ng-app="myApp" ng-controller="startScreen">
 <head>
-    <meta name="viewport" content="width=device-width, target-densitydpi=medium-dpi">
-    <title>Home Page | Site Title</title>
-    <meta name="description" content="">
+	<title ng-bind="'Flame.me"></title>
+	<!-- <link rel="stylesheet" href="css/animate.min.css"> -->
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/output/global.css" />
-    
+	<link rel="stylesheet" href="styles/output/global.css" />
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600' rel='stylesheet' type='text/css'>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
 </head>
 
 <body>
-
-    <!--[if lt IE 9]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser.
-    Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a>
-    to improve your experience.</p>
-    <![endif]-->
 
 	<div class="container">
 
@@ -32,78 +22,102 @@
 
 		<div class="row">
 			<div class="intro">
-			    <h1>Flame</h1>
-			    <p>Lorem ipsum dolor sit amet, consectetur elite adipiscing, sed do eiusmod tempor incididunt labore dolore magna aliqua</p>
-	    	</div>
+				<h1><span>Flame</span>.me</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur elite adipiscing, sed do eiusmod tempor incididunt labore dolore magna aliqua</p>
+			</div>
 		</div>
 
 		<!-- FORM STEP 1 -->
 
-	    <div class="row">
-	    	<form action="">
+		<div class="row">
+			<form name="startForm" class="animate-show" ng-submit="startForm.$valid && processForm()" ng-hide="startForm.$submitted">
 				<fieldset>
-			    	<input type="text" id="summoner-name" placeholder="Enter summoner name" />
-			    	<select name="" id="summoner-server">
-			    		<option value="server_euw">EUW</option>
-			    		<option value="server_eune">EUNE</option>
-			    		<option value="server_na">NA</option>
-			    		<option value="server_oce">OCE</option>
-			    		<option value="server_br">BR</option>
-			    	</select>
-			    	<div class="selector">
-				    	<label for="radio-flame">
-				    		<input type="radio" name="option" id="radio-flame" value="flame" checked> Flame
-				    	</label>
-				    	<label for="radio-praise">
-				    		<input type="radio" name="option" id="radio-praise" value="praise"> Praise
-				    	</label>
-			  		</div>
-					<button id="button-submit" type="submit" class="btn btn-main btn-solid-red">Flame on!</button>
+
+					<div class="form-row">
+						<div class="summoner-search">
+
+							<input type="text" required ng-model="searchSummoner" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control"type="text" placeholder="Enter summoner name" autofocus />
+
+						</div>
+
+						<div class="region">
+							<select name="region">
+								<option value="server_euw">EUW</option>
+								<option value="server_eune">EUNE</option>
+								<option value="server_na">NA</option>
+								<option value="server_oce">OCE</option>
+								<option value="server_br">BR</option>
+							</select>
+						</div>
+
+					</div>
+
+
+					<div class="form-row">
+						<div class="custom-radio">
+							<div class="radio">
+								<input type="radio" name="flame" id="flame" value="flame" checked="checked">
+								<label for="flame">Flame</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="flame" id="praise" value="praise">
+								<label for="praise">Praise</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-row text-center">
+						<button type="submit" class="btn btn-submit btn-main">Flame on!</button>
+					</div>
+
 				</fieldset>
-	    	</form>
-	    </div>
+			</form>
+		</div>
+	
 
-	    <!-- FORM STEP 1 -->
+		<!-- FORM STEP 2 -->
 
-		<!--<div class="row">
-			<h2>Summoner Name</h2>
+		<div class="row step-2 animate-show" ng-show="startForm.$submitted">
+			<h2> <div><strong>Name:</strong>{{ object[searchSummoner].name }}</div></h2>
 
-		    <blockquote>
+			<blockquote>
 				&quot;Do you tan easily? Because your looking a little bronze!&quot;
-		    </blockquote>
+			</blockquote>
 
 			<button type="submit" class="btn btn-main btn-border-red">Start over</button>
-		    <button type="submit" class="btn btn-main btn-solid-red">Flame harder</button>
-		</div>-->
+			<button type="submit" class="btn btn-main btn-solid-red">Flame harder</button>
+		</div>
 
 		<!-- ERROR REPORTING -->
 
-	    <div class="error">
-	    	<p>Flames gone out? <a href="#">Report a problem</a></p>
-	    </div>
+		<div class="error">
+			<p>Flames gone out? <a href="#">Report a problem</a></p>
+		</div>
 
-	    <!-- PROMOTIONS -->
+		<!-- PROMOTIONS -->
 
-	    <!--<div class="promo">
-			<p>Keep the Flame Alive</p>
-			<p>Please disable your adblock on this site to help our running costs!</p>
-			<p>Thank you :)</p>
-		</div>-->
+      <!--<div class="promo">
+      <p>Keep the Flame Alive</p>
+      <p>Please disable your adblock on this site to help our running costs!</p>
+      <p>Thank you :)</p>
+  </div>-->
 
-		<!-- FOOTER -->
+  <!-- FOOTER -->
 
-		<footer>
-			<a class="btn btn-alt btn-border-red" href="#">Submit a flame</a>
-			<a class="btn btn-alt btn-border-red" href="#">Share this</a>
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="P8EXUMD26YGH8">
-				<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-				<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-			</form>
-		</footer>
+  <footer>
+  	<a class="btn btn-alt btn-border-red" href="#">Submit a flame</a>
+  	<a class="btn btn-alt btn-border-red" href="#">Share this</a>
+  	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  		<input type="hidden" name="cmd" value="_s-xclick">
+  		<input type="hidden" name="hosted_button_id" value="P8EXUMD26YGH8">
+  		<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+  		<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+  	</form>
+  </footer>
 
-	</div>
-    
+</div>
+
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

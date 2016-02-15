@@ -2,7 +2,7 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+	outline: none;
 }
 
 fieldset {
@@ -11,57 +11,110 @@ fieldset {
 	border: none;
 }
 
-/* */
 
-#summoner-name,
-#summoner-server {
-	margin: 0;
+.form-row {
+	margin-bottom: 30px;
+	    overflow: hidden;
 }
 
-#summoner-name {
-	margin: 0 0 30px 0;
-	padding:0 20px;
-	height: 66px;
+input, select, textarea, button{
+	font-family:inherit;
 	border: 2px solid $w;
 	background: #fff;
 	@include border-radius(4px);
 	font-size: 22px;
 	color: #666;
 	width: 100%;
-	text-align: center;
+}
 
-	@media #{$medium-up} {
-		width: 350px;
+/* */
+
+
+.custom-radio {
+    overflow: hidden;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    width: 100%;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+}
+
+.custom-radio .radio {
+    display: table-cell
+}
+
+.custom-radio input {
+    position: absolute;
+    left: -9999px;
+    opacity: 0
+}
+
+.custom-radio label {
+    display: block;
+    cursor: pointer;
+    margin-left: 0!important;
+    margin-right: 0!important;
+	font-family: Montserrat;
+    height: 66px;
+    font-size: 14px;
+    line-height: 66px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    background: #fff;
+    @include transition(all 300ms ease-in-out);
+}
+
+.custom-radio label:hover,.custom-radio label:focus {
+    background-color: $main-red;
+    color: $w;
+}
+
+.custom-radio input:checked+label,
+.custom-radio input:checked+label:hover,
+.custom-radio input:checked+label:focus {
+    background: $main-red;
+    color: white
+}
+
+.region {
+	float: left;
+	width: 22%;
+
+	select {
+		height: 66px;
+
 	}
+}
+
+.summoner-search {
+
+	float: left;
+	width: 75%;
+	margin-right: 3%;
+
+	input[type="text"] {
+		height: 66px;
+		padding:0 20px;
+		height: 66px;
+		border: 2px solid $w;
+		font-size: 22px;
+		color: #666;
+	}
+
+
 
 	&:focus {
 		border: 2px solid $main-red;
 	}
 }
 
-#summoner-server {
-	margin: 0 0 30px 0;
-	width:100%;
-}
 
-.selector {
-	margin: 0 0 30px 0;
-	padding: 0;
-	color: $w;
-	display: inline-block;
-	width:100%;
-
-	@media #{$medium-up} {
-
-	}
-
-	label {
-		margin: 0;
-		padding: 0;
-		width: 50%;
-		float:left;
-		display: inline-block;
-		font-family: Montserrat;
-
-	}
-}

@@ -2,10 +2,11 @@
 @import "_mixins";
 @import "_framework";
 @import "_variables";
-
 @import "_buttons";
 @import "_forms";
 @import "_promo";
+
+
 
 html {
   box-sizing: border-box;
@@ -18,7 +19,8 @@ html {
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
-	 background: url("../../images/bg.jpg") no-repeat center center fixed; 
+	font-weight: 300;
+	 background: url("../../images/background-large.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -65,7 +67,7 @@ p a {
  .container {
 
 	width: 100%;
-	max-width: 1200px;
+	max-width: 500px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -82,8 +84,22 @@ p a {
 	}
 }
 
+
+.text-center {
+	text-align: center;
+}
+
 .intro {
 	text-align: center;
+
+	h1 {
+		font-size: 70px;
+		margin-bottom: 0;
+		span {
+			color: $main-red;
+		}
+	}
+
 }
 
 .error {
