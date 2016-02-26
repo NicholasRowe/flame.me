@@ -642,6 +642,7 @@ p a {
     text-decoration: underline; }
 
 .container {
+  text-align: center;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -655,6 +656,15 @@ p a {
     min-width: 0;
     padding-left: 0;
     padding-right: 0; }
+
+.summoner-name {
+  color: #fb505c;
+  text-align: center;
+  font-size: 44px;
+  margin: 0; }
+
+blockquote {
+  margin: 0; }
 
 .text-center {
   text-align: center; }

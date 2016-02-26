@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp" ng-controller="startScreen">
 <head>
-	<title ng-bind="'Flame.me"></title>
-	<!-- <link rel="stylesheet" href="css/animate.min.css"> -->
+	<title="Flame.me"></title>
+	<link rel="stylesheet" href="css/animate.min.css">
 
 	<link rel="stylesheet" href="styles/output/global.css" />
 
@@ -22,7 +22,7 @@
 
 		<div class="row">
 			<div class="intro">
-				<h1><span>Flame</span>.me</h1>
+				<h1><span>Angular</span>.js</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur elite adipiscing, sed do eiusmod tempor incididunt labore dolore magna aliqua</p>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 		<!-- FORM STEP 1 -->
 
 		<div class="row" ng-hide="startForm.$submitted">
-			<form name="startForm" class="animate-show" ng-submit="startForm.$valid && processForm()" >
+			<form name="startForm" class="animate-show" ng-submit="startForm.$valid && getSummoner()" >
 				<fieldset>
 
 					<div class="form-row">
@@ -76,7 +76,7 @@
 		<!-- FORM STEP 2 -->
 
 		<div class="row step-2 animate-show" ng-show="startForm.$submitted">
-			<h2> <div><strong></strong>{{ object[searchSummoner].name }}</div></h2>
+			<h2 class="summoner-name">{{ object[searchSummoner].name }}</h2>
 
 			<blockquote>
 				&quot;Do you tan easily? Because your looking a little bronze!&quot;

@@ -73,6 +73,8 @@ p a {
 
 .container {
 
+	text-align: center;
+
 	width: 100%;
 	max-width: 500px;
 	margin: 0 auto;
@@ -91,6 +93,16 @@ p a {
 	}
 }
 
+.summoner-name {
+	color: $main-red;
+	text-align: center;
+	    font-size: 44px;
+    margin: 0;
+}
+
+blockquote {
+	margin: 0;
+}
 
 .text-center {
 	text-align: center;
@@ -108,6 +120,7 @@ p a {
 	}
 
 }
+
 
 .error {
 	text-align: center;
